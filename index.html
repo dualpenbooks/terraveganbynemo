@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terra Vegan by Nemo | L'autoproduzione vegetale in 40 volumi</title>
+<meta name="description" content="Terra Vegan by Nemo: progetto editoriale dedicato all'autoproduzione vegetale. 40 volumi, 4 serie, 14 lingue. Edizioni Terra Vegan.">
+<style>
+  :root{
+    --verde:#3d5a3a;
+    --verde-scuro:#2c4229;
+    --crema:#faf6ee;
+    --carta:#ffffff;
+    --terra:#b8860b;
+    --arancio:#c05f10;
+    --testo:#2e2a24;
+    --grigio:#6b665e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:Georgia,'Times New Roman',serif;color:var(--testo);background:var(--crema);line-height:1.65}
+  .sans{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+  .container{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* Barra lingue */
+  .langbar{background:var(--verde-scuro);color:#d9d4c7;font-size:.8rem;padding:6px 0;font-family:Helvetica,Arial,sans-serif}
+  .langbar .container{display:flex;justify-content:flex-end;gap:14px}
+  .langbar .attiva{color:#fff;font-weight:bold;border-bottom:1px solid #fff}
+  .langbar .presto{opacity:.45;cursor:default}
+
+  /* Header */
+  header{background:var(--verde);color:#fff;padding:64px 0 56px;text-align:center}
+  header h1{font-size:2.8rem;font-weight:normal;letter-spacing:.03em}
+  header .sotto{font-style:italic;font-size:1.15rem;margin-top:10px;color:#e8e3d5}
+  header .numeri{margin-top:26px;font-family:Helvetica,Arial,sans-serif;font-size:.95rem;letter-spacing:.12em;text-transform:uppercase;color:#cfe0c8}
+  header .numeri span{margin:0 12px}
+
+  /* Nav */
+  nav{background:var(--carta);border-bottom:1px solid #e3ddd0;position:sticky;top:0;z-index:10}
+  nav .container{display:flex;justify-content:center;gap:34px;padding:14px 24px;flex-wrap:wrap}
+  nav a{color:var(--verde-scuro);text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase}
+  nav a:hover{color:var(--terra)}
+
+  section{padding:60px 0}
+  h2{font-size:1.9rem;font-weight:normal;color:var(--verde-scuro);text-align:center;margin-bottom:8px}
+  .filo{width:56px;height:2px;background:var(--terra);margin:14px auto 36px}
+
+  /* Manifesto */
+  .manifesto{background:var(--crema)}
+  .manifesto .testo{max-width:720px;margin:0 auto;font-size:1.12rem}
+  .manifesto p{margin-bottom:18px}
+  .manifesto .incipit{font-size:1.35rem;font-style:italic;text-align:center;color:var(--verde);margin-bottom:28px}
+  .manifesto .firma{text-align:right;font-style:italic;color:var(--grigio);margin-top:26px}
+
+  /* Serie */
+  .serie{background:var(--carta)}
+  .griglia-serie{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-bottom:48px}
+  .card{border:1px solid #e3ddd0;border-radius:6px;padding:26px 22px;background:var(--crema)}
+  .card h3{color:var(--verde-scuro);font-size:1.2rem;font-weight:normal;margin-bottom:4px}
+  .card .vol{font-family:Helvetica,Arial,sans-serif;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--terra);margin-bottom:12px}
+  .card p{font-size:.95rem;margin-bottom:14px}
+  .stato{font-family:Helvetica,Arial,sans-serif;font-size:.8rem;font-weight:bold}
+  .stato.ok{color:var(--verde)}
+  .stato.presto{color:var(--arancio)}
+
+  /* Copertine base */
+  .griglia-cover{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:20px;max-width:920px;margin:0 auto}
+  .griglia-cover figure{text-align:center}
+  .griglia-cover img{width:100%;border-radius:3px;box-shadow:0 3px 12px rgba(0,0,0,.18)}
+  .griglia-cover figcaption{font-size:.8rem;color:var(--grigio);margin-top:8px;font-family:Helvetica,Arial,sans-serif}
+
+  /* Catalogo completo */
+  .catalogo{background:var(--crema)}
+  details{max-width:760px;margin:0 auto 14px;background:var(--carta);border:1px solid #e3ddd0;border-radius:6px}
+  summary{cursor:pointer;padding:16px 20px;color:var(--verde-scuro);font-size:1.05rem;list-style-position:inside}
+  summary .vol{font-family:Helvetica,Arial,sans-serif;font-size:.78rem;color:var(--terra);letter-spacing:.06em;text-transform:uppercase;margin-left:8px}
+  details ol{padding:4px 24px 20px 48px}
+  details li{margin-bottom:6px;font-size:.98rem}
+  details li span{color:var(--grigio);font-size:.85rem}
+  details .griglia-cover{padding:8px 20px 24px;max-width:none}
+
+  /* Autore */
+  .autore{background:var(--verde);color:#f2efe6}
+  .autore h2{color:#fff}
+  .autore .filo{background:#d9c48a}
+  .autore .testo{max-width:720px;margin:0 auto;text-align:center}
+  .autore .nome{font-size:1.5rem;font-style:italic;margin-bottom:18px}
+  .autore p{margin-bottom:14px}
+  .autore .cred{font-size:.95rem;color:#d9d4c7}
+
+  /* Store */
+  .store .lista{max-width:640px;margin:0 auto}
+  .store .voce{display:flex;align-items:baseline;gap:14px;padding:16px 4px;border-bottom:1px solid #e3ddd0}
+  .store .voce b{min-width:130px;font-family:Helvetica,Arial,sans-serif;font-size:.9rem;letter-spacing:.04em;color:var(--verde-scuro)}
+  .store a{color:var(--terra)}
+  .store .nota{max-width:640px;margin:26px auto 0;text-align:center;font-style:italic;color:var(--grigio);font-size:.95rem}
+
+  /* Contatti */
+  .contatti{background:var(--carta);text-align:center}
+  .contatti p{margin-bottom:10px;font-size:1.05rem}
+  .contatti a{color:var(--terra)}
+
+  footer{background:var(--verde-scuro);color:#b9b3a4;text-align:center;padding:26px 0;font-size:.85rem;font-family:Helvetica,Arial,sans-serif}
+
+  @media(max-width:600px){
+    header h1{font-size:2rem}
+    header .numeri span{display:block;margin:4px 0}
+  }
+</style>
+</head>
+<body>
+
+<div class="langbar">
+  <div class="container">
+    <span class="attiva">IT</span>
+    <span class="presto" title="In preparazione">EN</span>
+    <span class="presto" title="In preparazione">DE</span>
+    <span class="presto" title="In preparazione">FR</span>
+  </div>
+</div>
+
+<header>
+  <div class="container">
+    <h1>Terra Vegan by Nemo</h1>
+    <div class="sotto">Progetto editoriale dedicato all'autoproduzione vegetale</div>
+    <div class="numeri"><span>40 volumi</span>·<span>4 serie</span>·<span>14 lingue</span>·<span>Edizioni Terra Vegan</span></div>
+  </div>
+</header>
+
+<nav>
+  <div class="container">
+    <a href="#manifesto">Il manifesto</a>
+    <a href="#serie">Le serie</a>
+    <a href="#catalogo">Catalogo</a>
+    <a href="#autore">L'autore</a>
+    <a href="#store">Dove trovarli</a>
+    <a href="#contatti">Contatti</a>
+  </div>
+</nav>
+
+<section class="manifesto" id="manifesto">
+  <div class="container">
+    <h2>Terra Vegan: l'autoproduzione è libertà</h2>
+    <div class="filo"></div>
+    <div class="testo">
+      <p class="incipit">Terra Vegan è un percorso, non una raccolta di ricette.</p>
+      <p>Nasce dalla convinzione che cucinare sia un atto di libertà: libertà di scegliere cosa portare in tavola, di ridurre la dipendenza dalla grande distribuzione, di produrre con le proprie mani cibo etico, sano e straordinariamente buono.</p>
+      <p>40 volumi in quattro serie accompagnano chiunque dalla cucina quotidiana fino alla produzione artigianale professionale. Si parte da una bruschetta. Si arriva, se si vuole, a una produzione certificata HACCP e ISO 22000. Il cammino è tuo: Terra Vegan ti dà gli strumenti per percorrerlo.</p>
+      <p>Non imitazione, non compromesso. Ogni preparazione ha una dignità propria. Ogni ricetta è una base da cui costruire, sperimentare, reinventare.</p>
+      <p>La cucina vegetale non è privazione. È scoperta.</p>
+      <p class="firma">Nemo, autore di Terra Vegan</p>
+    </div>
+  </div>
+</section>
+
+<section class="serie" id="serie">
+  <div class="container">
+    <h2>Le quattro serie</h2>
+    <div class="filo"></div>
+    <div class="griglia-serie">
+      <div class="card">
+        <h3>Serie Base</h3>
+        <div class="vol">Vol. 1-9 · 14 lingue</div>
+        <p>Fondamenti dell'autoproduzione vegana: alternative vegetali a salumi, formaggi e prodotti del mare, salse, pane, dolci, fermentati. Accessibili e tecnicamente fondati.</p>
+        <div class="stato ok">✓ Completata · disponibile in 14 lingue</div>
+      </div>
+      <div class="card">
+        <h3>Ciclo Koji e Serie Avanzata</h3>
+        <div class="vol">Vol. 10-21 · IT / EN UK / DE / FR</div>
+        <p>Tecniche avanzate: Koji, garum, idrocolloidi, enzimi, affumicatura, sicurezza alimentare, zero rifiuti. Vol. 21: il Compendio.</p>
+        <div class="stato presto">In fase di caricamento sugli store</div>
+      </div>
+      <div class="card">
+        <h3>Terra Vegan Dolce</h3>
+        <div class="vol">D1-D10 · IT / EN UK / DE / FR</div>
+        <p>Pasticceria vegana: basi, cioccolateria, gelati, pasticceria moderna, conserve dolci, senza glutine, decorazione.</p>
+        <div class="stato presto">In fase di caricamento sugli store</div>
+      </div>
+      <div class="card">
+        <h3>Terra Vegan Professionale</h3>
+        <div class="vol">P1-P9 · IT / EN UK / DE / FR</div>
+        <p>Per professionisti: igiene, HACCP, ISO 22000, etichettatura, laboratorio, costi, marketing, B2B, business plan.</p>
+        <div class="stato presto">In fase di caricamento sugli store</div>
+      </div>
+    </div>
+
+    <h2 style="font-size:1.4rem">La Serie Base</h2>
+    <div class="filo"></div>
+    <div class="griglia-cover">
+      <figure><img src="img/vol1.jpg" alt="Copertina Vol. 1 Sapori Vegani d'Italia"><figcaption>Vol. 1 · Sapori Vegani d'Italia</figcaption></figure>
+      <figure><img src="img/vol2.jpg" alt="Copertina Vol. 2 L'essenza della Terra: Tartufi"><figcaption>Vol. 2 · L'essenza della Terra: Tartufi</figcaption></figure>
+      <figure><img src="img/vol3.jpg" alt="Copertina Vol. 3 Non Salumi"><figcaption>Vol. 3 · Non Salumi</figcaption></figure>
+      <figure><img src="img/vol4.jpg" alt="Copertina Vol. 4 Non Sformaggi"><figcaption>Vol. 4 · Non Sformaggi</figcaption></figure>
+      <figure><img src="img/vol5.jpg" alt="Copertina Vol. 5 Né Carne Né Pesce"><figcaption>Vol. 5 · Né Carne Né Pesce</figcaption></figure>
+      <figure><img src="img/vol6.jpg" alt="Copertina Vol. 6 Salse, Sughi e Condimenti"><figcaption>Vol. 6 · Salse, Sughi e Condimenti</figcaption></figure>
+      <figure><img src="img/vol7.jpg" alt="Copertina Vol. 7 Panificati e Basi Salate"><figcaption>Vol. 7 · Panificati e Basi Salate</figcaption></figure>
+      <figure><img src="img/vol8.jpg" alt="Copertina Vol. 8 Dolci e Grandi Lievitati"><figcaption>Vol. 8 · Dolci e Grandi Lievitati</figcaption></figure>
+      <figure><img src="img/vol9.jpg" alt="Copertina Vol. 9 Bevande e Cibi Fermentati"><figcaption>Vol. 9 · Bevande e Cibi Fermentati</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="catalogo" id="catalogo">
+  <div class="container">
+    <h2>Il catalogo completo</h2>
+    <div class="filo"></div>
+
+    <details open>
+      <summary>Serie Base <span class="vol">Vol. 1-9 · disponibile in 14 lingue</span></summary>
+      <ol>
+        <li>Sapori Vegani d'Italia</li>
+        <li>L'essenza della Terra: Tartufi</li>
+        <li>Non Salumi</li>
+        <li>Non Sformaggi</li>
+        <li>Né Carne Né Pesce</li>
+        <li>Salse, Sughi e Condimenti</li>
+        <li>Panificati e Basi Salate</li>
+        <li>Dolci e Grandi Lievitati</li>
+        <li>Bevande e Cibi Fermentati</li>
+      </ol>
+    </details>
+
+    <details>
+      <summary>Ciclo Koji <span class="vol">Vol. 10-14 · in fase di caricamento</span></summary>
+      <div class="griglia-cover">
+        <figure><img src="img/vol10.jpg" alt="Copertina Vol. 10 Il Koji: Produzione e Applicazioni"><figcaption>Vol. 10 · Il Koji: Produzione e Applicazioni</figcaption></figure>
+        <figure><img src="img/vol11.jpg" alt="Copertina Vol. 11 Il Koji in Cucina: Né Carne Né Pesce"><figcaption>Vol. 11 · Il Koji in Cucina: Né Carne Né Pesce</figcaption></figure>
+        <figure><img src="img/vol12.jpg" alt="Copertina Vol. 12 Non Salumi Vegani al Koji"><figcaption>Vol. 12 · Non Salumi Vegani al Koji</figcaption></figure>
+        <figure><img src="img/vol13.jpg" alt="Copertina Vol. 13 Non Sformaggi Vegani: I Grandi Stagionati"><figcaption>Vol. 13 · Non Sformaggi Vegani: I Grandi Stagionati</figcaption></figure>
+        <figure><img src="img/vol14.jpg" alt="Copertina Vol. 14 Lo Stagionatore Artigianale"><figcaption>Vol. 14 · Lo Stagionatore Artigianale</figcaption></figure>
+      </div>
+    </details>
+
+    <details>
+      <summary>Serie Avanzata <span class="vol">Vol. 15-21 · in fase di caricamento</span></summary>
+      <div class="griglia-cover">
+        <figure><img src="img/vol15.jpg" alt="Copertina Vol. 15 Umami Liquido"><figcaption>Vol. 15 · Umami Liquido: Garum, Miso e Amino-Salse Vegetali</figcaption></figure>
+        <figure><img src="img/vol16.jpg" alt="Copertina Vol. 16 Texture Avanzate"><figcaption>Vol. 16 · Texture Avanzate: Idrocolloidi e Design dei Grassi</figcaption></figure>
+        <figure><img src="img/vol17.jpg" alt="Copertina Vol. 17 Enzimatica Pura"><figcaption>Vol. 17 · Enzimatica Pura: Transglutaminasi, Proteasi e Idrolisi</figcaption></figure>
+        <figure><img src="img/vol18.jpg" alt="Copertina Vol. 18 Affumicatura Artigianale"><figcaption>Vol. 18 · Affumicatura Artigianale: Freddo, Caldo e Fumo Liquido</figcaption></figure>
+        <figure><img src="img/vol19.jpg" alt="Copertina Vol. 19 Sicurezza Scientifica"><figcaption>Vol. 19 · Sicurezza Scientifica: Metrologia e Microbiologia Domestica</figcaption></figure>
+        <figure><img src="img/vol20.jpg" alt="Copertina Vol. 20 Zero Rifiuti"><figcaption>Vol. 20 · Zero Rifiuti: Riciclo degli Scarti di Produzione</figcaption></figure>
+        <figure><img src="img/vol21.jpg" alt="Copertina Vol. 21 Il Compendio"><figcaption>Vol. 21 · Il Compendio: Manuale operativo Vol. 1-20</figcaption></figure>
+      </div>
+    </details>
+
+    <details>
+      <summary>Terra Vegan Dolce <span class="vol">D1-D10 · in fase di caricamento</span></summary>
+      <div class="griglia-cover">
+        <figure><img src="img/d1.jpg" alt="Copertina D1 Fondamenti del dolce vegano"><figcaption>D1 · Fondamenti del dolce vegano</figcaption></figure>
+        <figure><img src="img/d2.jpg" alt="Copertina D2 Viennoiserie, impasti arricchiti e dolci fritti"><figcaption>D2 · Viennoiserie, impasti arricchiti e dolci fritti</figcaption></figure>
+        <figure><img src="img/d3.jpg" alt="Copertina D3 Cioccolateria artigianale"><figcaption>D3 · Cioccolateria artigianale</figcaption></figure>
+        <figure><img src="img/d4.jpg" alt="Copertina D4 Gelati e dessert ghiacciati"><figcaption>D4 · Gelati e dessert ghiacciati</figcaption></figure>
+        <figure><img src="img/d5.jpg" alt="Copertina D5 Pasticceria moderna"><figcaption>D5 · Pasticceria moderna</figcaption></figure>
+        <figure><img src="img/d6.jpg" alt="Copertina D6 Pasticceria secca e confetteria"><figcaption>D6 · Pasticceria secca e confetteria</figcaption></figure>
+        <figure><img src="img/d7.jpg" alt="Copertina D7 Conserve dolci"><figcaption>D7 · Conserve dolci</figcaption></figure>
+        <figure><img src="img/d8.jpg" alt="Copertina D8 Decorazione e presentazione"><figcaption>D8 · Decorazione e presentazione</figcaption></figure>
+        <figure><img src="img/d9.jpg" alt="Copertina D9 Tecniche avanzate del dolce"><figcaption>D9 · Tecniche avanzate del dolce</figcaption></figure>
+        <figure><img src="img/d10.jpg" alt="Copertina D10 Pasticceria senza glutine"><figcaption>D10 · Pasticceria senza glutine</figcaption></figure>
+      </div>
+    </details>
+
+    <details>
+      <summary>Terra Vegan Professionale <span class="vol">P1-P9 · in fase di caricamento</span></summary>
+      <div class="griglia-cover">
+        <figure><img src="img/p1.jpg" alt="Copertina P1 Normativa igienico-sanitaria e autocontrollo alimentare"><figcaption>P1 · Normativa igienico-sanitaria e autocontrollo alimentare</figcaption></figure>
+        <figure><img src="img/p2.jpg" alt="Copertina P2 Certificazioni di qualità: HACCP, ISO 22000 e ISO 9001"><figcaption>P2 · Certificazioni di qualità: HACCP, ISO 22000 e ISO 9001</figcaption></figure>
+        <figure><img src="img/p3.jpg" alt="Copertina P3 Etichettatura, packaging e normativa europea"><figcaption>P3 · Etichettatura, packaging e normativa europea</figcaption></figure>
+        <figure><img src="img/p4.jpg" alt="Copertina P4 Il laboratorio artigianale"><figcaption>P4 · Il laboratorio artigianale: spazi, attrezzature e flussi operativi</figcaption></figure>
+        <figure><img src="img/p5.jpg" alt="Copertina P5 Calcolo dei costi, delle rese e dei prezzi di vendita"><figcaption>P5 · Calcolo dei costi, delle rese e dei prezzi di vendita</figcaption></figure>
+        <figure><img src="img/p6.jpg" alt="Copertina P6 Brand, comunicazione e marketing"><figcaption>P6 · Brand, comunicazione e marketing per il produttore vegano</figcaption></figure>
+        <figure><img src="img/p7.jpg" alt="Copertina P7 Vendita diretta"><figcaption>P7 · Vendita diretta: punto vendita, mercati, fiere e canali online</figcaption></figure>
+        <figure><img src="img/p8.jpg" alt="Copertina P8 Distribuzione B2B"><figcaption>P8 · Distribuzione B2B: negozi, ristoranti, rivenditori e GDO</figcaption></figure>
+        <figure><img src="img/p9.jpg" alt="Copertina P9 Il business plan"><figcaption>P9 · Il business plan: dal laboratorio all'impresa artigianale</figcaption></figure>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="autore" id="autore">
+  <div class="container">
+    <h2>L'autore</h2>
+    <div class="filo"></div>
+    <div class="testo">
+      <div class="nome">Nemo</div>
+      <p>Autore indipendente e ricercatore nel campo dell'autoproduzione vegana. Le sue opere uniscono competenza tecnica e approccio etico: nessun ingrediente industriale, focus su fermentazione, artigianalità tradizionale e sostenibilità.</p>
+      <p class="cred">Formazione: Diploma di Perito Agrario (Istituto Tecnico Agrario di Firenze), Laurea in Scienze Politiche (Università di Firenze)</p>
+      <p class="cred">Lead Auditor ISO 22000:2018 e ISO 9001:2015 · Responsabile Piano di Autocontrollo HACCP · Solida esperienza nel settore agricolo biologico</p>
+      <p class="cred">Formazione in cucina vegana: Vegan Basics, PlantStart, Vegan Fine Dining</p>
+      <p class="cred">Casa editrice: Edizioni Terra Vegan</p>
+    </div>
+  </div>
+</section>
+
+<section class="store" id="store">
+  <div class="container">
+    <h2>Dove trovare i libri</h2>
+    <div class="filo"></div>
+    <div class="lista">
+      <div class="voce"><b>StreetLib Store</b><span><a href="https://store.streetlib.com/store-search/?authors=&categories=&formats=&languages=&maxPrice=1000&minPrice=0&page=1&publishers=NEMO%20T.%20V.&q=&size=12&sortField=_score&sortOrder=desc" target="_blank" rel="noopener">Catalogo Terra Vegan su StreetLib</a></span></div>
+      <div class="voce"><b>Amazon</b><span><a href="https://www.amazon.it/stores/author/B0GVHKLKLQ" target="_blank" rel="noopener">Pagina autore Nemo</a></span></div>
+      <div class="voce"><b>Lulu</b><span><a href="https://www.lulu.com/spotlight/terravegan" target="_blank" rel="noopener">Edizioni cartacee su Lulu</a></span></div>
+      <div class="voce"><b>Altri store</b><span>Google Play, Apple Books, Kobo, Barnes &amp; Noble, Vivlio e altri, tramite distribuzione StreetLib</span></div>
+    </div>
+    <p class="nota">La Serie Base (Vol. 1-9) è disponibile in 14 lingue. Le serie Avanzata, Dolce e Professionale sono complete e in fase di caricamento sugli store.</p>
+  </div>
+</section>
+
+<section class="contatti" id="contatti">
+  <div class="container">
+    <h2>Contatti</h2>
+    <div class="filo"></div>
+    <p>Email: <a href="mailto:dualpen.books@hotmail.com">dualpen.books@hotmail.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/terravegan__" target="_blank" rel="noopener">@terravegan__</a></p>
+    <p>Casa editrice: Edizioni Terra Vegan</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 Edizioni Terra Vegan · Tutti i diritti riservati</div>
+</footer>
+
+</body>
+</html>
