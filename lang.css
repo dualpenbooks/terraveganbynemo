@@ -30,6 +30,13 @@ h2{font-size:1.9rem;font-weight:normal;color:var(--verde-scuro);text-align:cente
 .griglia-cover figure{text-align:center}
 .griglia-cover img{width:100%;border-radius:3px;box-shadow:0 3px 12px rgba(0,0,0,.18)}
 .griglia-cover figcaption{font-size:.8rem;color:var(--grigio);margin-top:8px;font-family:Helvetica,Arial,sans-serif}
+.catalogo{background:var(--crema)}
+details{max-width:760px;margin:0 auto 14px;background:var(--carta);border:1px solid #e3ddd0;border-radius:6px}
+summary{cursor:pointer;padding:16px 20px;color:var(--verde-scuro);font-size:1.05rem;list-style-position:inside}
+summary .vol{font-family:Helvetica,Arial,sans-serif;font-size:.78rem;color:var(--terra);letter-spacing:.06em;text-transform:uppercase;margin-left:8px}
+details ol{padding:4px 24px 20px 48px}
+details li{margin-bottom:6px;font-size:.98rem}
+details .griglia-cover{padding:8px 20px 24px;max-width:none}
 .autore{background:var(--verde);color:#f2efe6;text-align:center}
 .autore h2{color:#fff}.autore .filo{background:#d9c48a}
 .autore img{width:160px;height:160px;object-fit:cover;border-radius:50%;border:3px solid #d9c48a;margin-bottom:18px}
