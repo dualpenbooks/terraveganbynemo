@@ -46,6 +46,15 @@
   }
   if (!STRICT) loadGtag();
 
+  // Contatore esatto e anonimo (GoatCounter, senza cookie): conta le visite in automatico.
+  (function loadGoat() {
+    var g = document.createElement("script");
+    g.async = true;
+    g.setAttribute("data-goatcounter", "https://terravegan.goatcounter.com/count");
+    g.src = "https://gc.zgo.at/count.js";
+    document.head.appendChild(g);
+  })();
+
   if (!noticeShown()) showNotice();
 
   function showNotice() {
