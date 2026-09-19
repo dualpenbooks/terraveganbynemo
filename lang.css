@@ -57,3 +57,34 @@ details .griglia-cover{padding:8px 20px 24px;max-width:none}
 .contatti a{color:var(--terra)}
 footer{background:var(--verde-scuro);color:#b9b3a4;text-align:center;padding:26px 0;font-size:.85rem;font-family:Helvetica,Arial,sans-serif}
 @media(max-width:600px){header h1{font-size:2rem}header .numeri span{display:block;margin:4px 0}}
+
+  /* critica-tv */
+  .critica{background:var(--carta)}
+  .critica-occhiello{max-width:760px;margin:0 auto 28px;text-align:center;font-size:1.05rem}
+  .critica-serie{max-width:760px;margin:0 auto 30px;padding:18px 22px;border:1px solid #e3ddd0;border-radius:6px;background:var(--crema);text-align:center}
+  .critica-serie .nome{font-size:1.2rem;color:var(--verde-scuro)}
+  .critica-serie .riga{margin-top:6px;font-family:Helvetica,Arial,sans-serif;font-size:.85rem;color:var(--grigio)}
+  .stelle{color:var(--terra);letter-spacing:.11em;font-size:.9rem}
+  .critica-griglia{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:20px;max-width:920px;margin:0 auto}
+  .tessera{display:block;text-decoration:none;background:var(--crema);border:1px solid #e3ddd0;border-radius:6px;padding:12px;transition:border-color .15s,transform .15s}
+  .tessera:hover{border-color:var(--terra);transform:translateY(-3px)}
+  .tessera img{width:100%;height:auto;display:block;border-radius:3px;box-shadow:0 3px 12px rgba(0,0,0,.18)}
+  .tessera .tit{margin-top:10px;font-size:.95rem;color:var(--verde-scuro);line-height:1.25}
+  .tessera .riga{margin-top:5px;font-family:Helvetica,Arial,sans-serif;font-size:.76rem;color:var(--grigio)}
+  .critica-apri{margin-top:30px;text-align:center;font-family:Helvetica,Arial,sans-serif;font-size:.85rem;letter-spacing:.07em;text-transform:uppercase}
+  .critica-apri a{color:var(--terra)}
+  .pagina-critica .rec{max-width:760px;margin:0 auto 52px;padding-top:8px}
+  .pagina-critica .rec-testa{display:flex;gap:22px;align-items:flex-start;margin-bottom:16px}
+  .pagina-critica .rec-testa img{width:120px;flex:none;border-radius:3px;box-shadow:0 3px 12px rgba(0,0,0,.18)}
+  .pagina-critica .rec h3{font-size:1.35rem;font-weight:normal;color:var(--verde-scuro);margin-bottom:2px}
+  .pagina-critica .rec .tit-en{font-style:italic;color:var(--grigio);font-size:.95rem;margin-bottom:8px}
+  .pagina-critica .rec .meta{font-family:Helvetica,Arial,sans-serif;font-size:.82rem;color:var(--grigio);line-height:1.7}
+  .pagina-critica .rec .meta a{color:var(--terra)}
+  .pagina-critica .rec p{margin-bottom:14px;font-size:1.02rem}
+  .pagina-critica .rec p.verdetto{font-style:italic;color:var(--verde);font-size:1.08rem}
+  .pagina-critica .rec .nota-trad{font-style:italic;color:var(--grigio);font-size:.92rem;margin-bottom:12px}
+  .pagina-critica .rec details{max-width:none;margin:10px 0 0;background:var(--crema)}
+  .pagina-critica .rec details p{padding:0 20px}
+  .pagina-critica .rec details p:last-child{padding-bottom:16px}
+  @media(max-width:600px){.pagina-critica .rec-testa{flex-direction:column}}
+  /* /critica-tv */

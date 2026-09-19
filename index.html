@@ -110,6 +110,39 @@
     header h1{font-size:2rem}
     header .numeri span{display:block;margin:4px 0}
   }
+
+
+
+  /* critica-tv */
+  .critica{background:var(--carta)}
+  .critica-occhiello{max-width:760px;margin:0 auto 28px;text-align:center;font-size:1.05rem}
+  .critica-serie{max-width:760px;margin:0 auto 30px;padding:18px 22px;border:1px solid #e3ddd0;border-radius:6px;background:var(--crema);text-align:center}
+  .critica-serie .nome{font-size:1.2rem;color:var(--verde-scuro)}
+  .critica-serie .riga{margin-top:6px;font-family:Helvetica,Arial,sans-serif;font-size:.85rem;color:var(--grigio)}
+  .stelle{color:var(--terra);letter-spacing:.11em;font-size:.9rem}
+  .critica-griglia{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:20px;max-width:920px;margin:0 auto}
+  .tessera{display:block;text-decoration:none;background:var(--crema);border:1px solid #e3ddd0;border-radius:6px;padding:12px;transition:border-color .15s,transform .15s}
+  .tessera:hover{border-color:var(--terra);transform:translateY(-3px)}
+  .tessera img{width:100%;height:auto;display:block;border-radius:3px;box-shadow:0 3px 12px rgba(0,0,0,.18)}
+  .tessera .tit{margin-top:10px;font-size:.95rem;color:var(--verde-scuro);line-height:1.25}
+  .tessera .riga{margin-top:5px;font-family:Helvetica,Arial,sans-serif;font-size:.76rem;color:var(--grigio)}
+  .critica-apri{margin-top:30px;text-align:center;font-family:Helvetica,Arial,sans-serif;font-size:.85rem;letter-spacing:.07em;text-transform:uppercase}
+  .critica-apri a{color:var(--terra)}
+  .pagina-critica .rec{max-width:760px;margin:0 auto 52px;padding-top:8px}
+  .pagina-critica .rec-testa{display:flex;gap:22px;align-items:flex-start;margin-bottom:16px}
+  .pagina-critica .rec-testa img{width:120px;flex:none;border-radius:3px;box-shadow:0 3px 12px rgba(0,0,0,.18)}
+  .pagina-critica .rec h3{font-size:1.35rem;font-weight:normal;color:var(--verde-scuro);margin-bottom:2px}
+  .pagina-critica .rec .tit-en{font-style:italic;color:var(--grigio);font-size:.95rem;margin-bottom:8px}
+  .pagina-critica .rec .meta{font-family:Helvetica,Arial,sans-serif;font-size:.82rem;color:var(--grigio);line-height:1.7}
+  .pagina-critica .rec .meta a{color:var(--terra)}
+  .pagina-critica .rec p{margin-bottom:14px;font-size:1.02rem}
+  .pagina-critica .rec p.verdetto{font-style:italic;color:var(--verde);font-size:1.08rem}
+  .pagina-critica .rec .nota-trad{font-style:italic;color:var(--grigio);font-size:.92rem;margin-bottom:12px}
+  .pagina-critica .rec details{max-width:none;margin:10px 0 0;background:var(--crema)}
+  .pagina-critica .rec details p{padding:0 20px}
+  .pagina-critica .rec details p:last-child{padding-bottom:16px}
+  @media(max-width:600px){.pagina-critica .rec-testa{flex-direction:column}}
+  /* /critica-tv */
 </style>
 <link rel="icon" type="image/png" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 </head>
@@ -137,6 +170,7 @@
     <a href="#manifesto">Il manifesto</a>
     <a href="#serie">Le serie</a>
     <a href="#catalogo">Catalogo</a>
+    <a href="#critica">La critica</a>
     <a href="#autore">L'autore</a>
     <a href="#store">Dove trovarli</a>
     <a href="#contatti">Contatti</a>
@@ -281,6 +315,79 @@
     </details>
   </div>
 </section>
+
+
+
+<!-- critica-tv -->
+<section class="critica" id="critica">
+  <div class="container">
+    <h2>La critica</h2>
+    <div class="filo"></div>
+    <p class="critica-occhiello">I manuali non li giudichiamo solo noi. Il critico statunitense Anthony Avina sta recensendo uno per uno i volumi dell'edizione inglese di Terra Vegan by Nemo: qui ci sono i suoi giudizi, integrali.</p>
+    <div class="critica-serie">
+      <div class="nome">Serie Base</div>
+      <div class="riga"><span class="stelle">★★★★★</span> 9 volumi su 9 recensiti · tutti 5 stelle · Anthony Avina</div>
+    </div>
+    <div class="critica-griglia">
+      <a class="tessera" href="/la-critica/#vol1">
+        <img src="/img/vol1.jpg" alt="Sapori Vegani d'Italia" loading="lazy">
+        <div class="tit">Sapori Vegani d'Italia</div>
+        <div class="riga">Vol. 1</div>
+        <div class="riga"><span class="stelle">★★★★★</span> Anthony Avina · 10/10</div>
+      </a>
+      <a class="tessera" href="/la-critica/#vol2">
+        <img src="/img/vol2.jpg" alt="L'essenza della Terra: Ricette Vegane al Tartufo" loading="lazy">
+        <div class="tit">L'essenza della Terra: Ricette Vegane al Tartufo</div>
+        <div class="riga">Vol. 2</div>
+        <div class="riga"><span class="stelle">★★★★★</span> Anthony Avina · 10/10</div>
+      </a>
+      <a class="tessera" href="/la-critica/#vol3">
+        <img src="/img/vol3.jpg" alt="Non Salumi Veg" loading="lazy">
+        <div class="tit">Non Salumi Veg</div>
+        <div class="riga">Vol. 3</div>
+        <div class="riga"><span class="stelle">★★★★★</span> Anthony Avina · 10/10</div>
+      </a>
+      <a class="tessera" href="/la-critica/#vol4">
+        <img src="/img/vol4.jpg" alt="Non Sformaggi Veg" loading="lazy">
+        <div class="tit">Non Sformaggi Veg</div>
+        <div class="riga">Vol. 4</div>
+        <div class="riga"><span class="stelle">★★★★★</span> Anthony Avina · 10/10</div>
+      </a>
+      <a class="tessera" href="/la-critica/#vol5">
+        <img src="/img/vol5.jpg" alt="Né Carne Né Pesce" loading="lazy">
+        <div class="tit">Né Carne Né Pesce</div>
+        <div class="riga">Vol. 5</div>
+        <div class="riga"><span class="stelle">★★★★★</span> Anthony Avina · 10/10</div>
+      </a>
+      <a class="tessera" href="/la-critica/#vol6">
+        <img src="/img/vol6.jpg" alt="Salse, Sughi e Condimenti" loading="lazy">
+        <div class="tit">Salse, Sughi e Condimenti</div>
+        <div class="riga">Vol. 6</div>
+        <div class="riga"><span class="stelle">★★★★★</span> Anthony Avina · 10/10</div>
+      </a>
+      <a class="tessera" href="/la-critica/#vol7">
+        <img src="/img/vol7.jpg" alt="Pane Pizza e Basi Salate" loading="lazy">
+        <div class="tit">Pane Pizza e Basi Salate</div>
+        <div class="riga">Vol. 7</div>
+        <div class="riga"><span class="stelle">★★★★★</span> Anthony Avina · 10/10</div>
+      </a>
+      <a class="tessera" href="/la-critica/#vol8">
+        <img src="/img/vol8.jpg" alt="Dolci e Grandi Lievitati Vegani" loading="lazy">
+        <div class="tit">Dolci e Grandi Lievitati Vegani</div>
+        <div class="riga">Vol. 8</div>
+        <div class="riga"><span class="stelle">★★★★★</span> Anthony Avina · 10/10</div>
+      </a>
+      <a class="tessera" href="/la-critica/#vol9">
+        <img src="/img/vol9.jpg" alt="Bevande e Cibi Fermentati" loading="lazy">
+        <div class="tit">Bevande e Cibi Fermentati</div>
+        <div class="riga">Vol. 9</div>
+        <div class="riga"><span class="stelle">★★★★★</span> Anthony Avina · 10/10</div>
+      </a>
+    </div>
+    <div class="critica-apri"><a href="/la-critica/">Apri le recensioni</a></div>
+  </div>
+</section>
+<!-- /critica-tv -->
 
 <section class="autore" id="autore">
   <div class="container">

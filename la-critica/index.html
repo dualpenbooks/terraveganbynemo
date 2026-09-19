@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La critica · Terra Vegan by Nemo</title>
+<meta name="description" content="Le recensioni di Anthony Avina sui manuali Terra Vegan by Nemo, volume per volume: il voto, il testo integrale e la traduzione italiana.">
+<style>
+  :root{
+    --verde:#3d5a3a;
+    --verde-scuro:#2c4229;
+    --crema:#faf6ee;
+    --carta:#ffffff;
+    --terra:#b8860b;
+    --arancio:#c05f10;
+    --testo:#2e2a24;
+    --grigio:#6b665e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:Georgia,'Times New Roman',serif;color:var(--testo);background:var(--crema);line-height:1.65}
+  .sans{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+  .container{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* Barra lingue */
+  .langbar{background:var(--verde-scuro);color:#d9d4c7;font-size:.8rem;padding:6px 0;font-family:Helvetica,Arial,sans-serif}
+  .langbar .container{display:flex;justify-content:flex-end;gap:14px}
+  .langbar .attiva{color:#fff;font-weight:bold;border-bottom:1px solid #fff}
+  .langbar .presto{opacity:.45;cursor:default}
+
+  /* Header */
+  header{background:var(--verde);color:#fff;padding:64px 0 56px;text-align:center}
+  header h1{font-size:2.8rem;font-weight:normal;letter-spacing:.03em}
+  header .sotto{font-style:italic;font-size:1.15rem;margin-top:10px;color:#e8e3d5}
+  header .numeri{margin-top:26px;font-family:Helvetica,Arial,sans-serif;font-size:.95rem;letter-spacing:.12em;text-transform:uppercase;color:#cfe0c8}
+  header .numeri span{margin:0 12px}
+
+  /* Nav */
+  nav{background:var(--carta);border-bottom:1px solid #e3ddd0;position:sticky;top:0;z-index:10}
+  nav .container{display:flex;justify-content:center;gap:34px;padding:14px 24px;flex-wrap:wrap}
+  nav a{color:var(--verde-scuro);text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase}
+  nav a:hover{color:var(--terra)}
+
+  section{padding:60px 0}
+  h2{font-size:1.9rem;font-weight:normal;color:var(--verde-scuro);text-align:center;margin-bottom:8px}
+  .filo{width:56px;height:2px;background:var(--terra);margin:14px auto 36px}
+
+  /* Manifesto */
+  .manifesto{background:var(--crema)}
+  .manifesto .testo{max-width:720px;margin:0 auto;font-size:1.12rem}
+  .manifesto p{margin-bottom:18px}
+  .manifesto .incipit{font-size:1.35rem;font-style:italic;text-align:center;color:var(--verde);margin-bottom:28px}
+  .manifesto .firma{text-align:right;font-style:italic;color:var(--grigio);margin-top:26px}
+
+  /* Serie */
+  .serie{background:var(--carta)}
+  .griglia-serie{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-bottom:48px}
+  .card{border:1px solid #e3ddd0;border-radius:6px;padding:26px 22px;background:var(--crema)}
+  .card h3{color:var(--verde-scuro);font-size:1.2rem;font-weight:normal;margin-bottom:4px}
+  .card .vol{font-family:Helvetica,Arial,sans-serif;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--terra);margin-bottom:12px}
+  .card p{font-size:.95rem;margin-bottom:14px}
+  .stato{font-family:Helvetica,Arial,sans-serif;font-size:.8rem;font-weight:bold}
+  .stato.ok{color:var(--verde)}
+  .stato.presto{color:var(--arancio)}
+
+  /* Copertine base */
+  .griglia-cover{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:20px;max-width:920px;margin:0 auto}
+  .griglia-cover figure{text-align:center}
+  .griglia-cover img{width:100%;border-radius:3px;box-shadow:0 3px 12px rgba(0,0,0,.18)}
+  .griglia-cover figcaption{font-size:.8rem;color:var(--grigio);margin-top:8px;font-family:Helvetica,Arial,sans-serif}
+
+  /* Catalogo completo */
+  .catalogo{background:var(--crema)}
+  details{max-width:760px;margin:0 auto 14px;background:var(--carta);border:1px solid #e3ddd0;border-radius:6px}
+  summary{cursor:pointer;padding:16px 20px;color:var(--verde-scuro);font-size:1.05rem;list-style-position:inside}
+  summary .vol{font-family:Helvetica,Arial,sans-serif;font-size:.78rem;color:var(--terra);letter-spacing:.06em;text-transform:uppercase;margin-left:8px}
+  summary.con-banner{list-style:none}
+  summary.con-banner::-webkit-details-marker{display:none}
+  summary.con-banner .freccia::before{content:"\25B8  "}
+  details[open] summary.con-banner .freccia::before{content:"\25BE  "}
+  summary.con-banner img{display:block;width:100%;height:auto;border-radius:6px;margin:0 0 12px}
+  details ol{padding:4px 24px 20px 48px}
+  details li{margin-bottom:6px;font-size:.98rem}
+  details li span{color:var(--grigio);font-size:.85rem}
+  details .griglia-cover{padding:8px 20px 24px;max-width:none}
+
+  /* Autore */
+  .autore{background:var(--verde);color:#f2efe6}
+  .autore h2{color:#fff}
+  .autore .filo{background:#d9c48a}
+  .autore .testo{max-width:720px;margin:0 auto;text-align:center}
+  .autore .nome{font-size:1.5rem;font-style:italic;margin-bottom:18px}
+  .autore p{margin-bottom:14px}
+  .autore .cred{font-size:.95rem;color:#d9d4c7}
+
+  /* Store */
+  .store .lista{max-width:640px;margin:0 auto}
+  .store .voce{display:flex;align-items:baseline;gap:14px;padding:16px 4px;border-bottom:1px solid #e3ddd0}
+  .store .voce b{min-width:130px;font-family:Helvetica,Arial,sans-serif;font-size:.9rem;letter-spacing:.04em;color:var(--verde-scuro)}
+  .store a{color:var(--terra)}
+  .store .nota{max-width:640px;margin:26px auto 0;text-align:center;font-style:italic;color:var(--grigio);font-size:.95rem}
+
+  /* Contatti */
+  .contatti{background:var(--carta);text-align:center}
+  .contatti p{margin-bottom:10px;font-size:1.05rem}
+  .contatti a{color:var(--terra)}
+
+  footer{background:var(--verde-scuro);color:#b9b3a4;text-align:center;padding:26px 0;font-size:.85rem;font-family:Helvetica,Arial,sans-serif}
+
+  @media(max-width:600px){
+    header h1{font-size:2rem}
+    header .numeri span{display:block;margin:4px 0}
+  }
+
+
+
+  /* critica-tv */
+  .critica{background:var(--carta)}
+  .critica-occhiello{max-width:760px;margin:0 auto 28px;text-align:center;font-size:1.05rem}
+  .critica-serie{max-width:760px;margin:0 auto 30px;padding:18px 22px;border:1px solid #e3ddd0;border-radius:6px;background:var(--crema);text-align:center}
+  .critica-serie .nome{font-size:1.2rem;color:var(--verde-scuro)}
+  .critica-serie .riga{margin-top:6px;font-family:Helvetica,Arial,sans-serif;font-size:.85rem;color:var(--grigio)}
+  .stelle{color:var(--terra);letter-spacing:.11em;font-size:.9rem}
+  .critica-griglia{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:20px;max-width:920px;margin:0 auto}
+  .tessera{display:block;text-decoration:none;background:var(--crema);border:1px solid #e3ddd0;border-radius:6px;padding:12px;transition:border-color .15s,transform .15s}
+  .tessera:hover{border-color:var(--terra);transform:translateY(-3px)}
+  .tessera img{width:100%;height:auto;display:block;border-radius:3px;box-shadow:0 3px 12px rgba(0,0,0,.18)}
+  .tessera .tit{margin-top:10px;font-size:.95rem;color:var(--verde-scuro);line-height:1.25}
+  .tessera .riga{margin-top:5px;font-family:Helvetica,Arial,sans-serif;font-size:.76rem;color:var(--grigio)}
+  .critica-apri{margin-top:30px;text-align:center;font-family:Helvetica,Arial,sans-serif;font-size:.85rem;letter-spacing:.07em;text-transform:uppercase}
+  .critica-apri a{color:var(--terra)}
+  .pagina-critica .rec{max-width:760px;margin:0 auto 52px;padding-top:8px}
+  .pagina-critica .rec-testa{display:flex;gap:22px;align-items:flex-start;margin-bottom:16px}
+  .pagina-critica .rec-testa img{width:120px;flex:none;border-radius:3px;box-shadow:0 3px 12px rgba(0,0,0,.18)}
+  .pagina-critica .rec h3{font-size:1.35rem;font-weight:normal;color:var(--verde-scuro);margin-bottom:2px}
+  .pagina-critica .rec .tit-en{font-style:italic;color:var(--grigio);font-size:.95rem;margin-bottom:8px}
+  .pagina-critica .rec .meta{font-family:Helvetica,Arial,sans-serif;font-size:.82rem;color:var(--grigio);line-height:1.7}
+  .pagina-critica .rec .meta a{color:var(--terra)}
+  .pagina-critica .rec p{margin-bottom:14px;font-size:1.02rem}
+  .pagina-critica .rec p.verdetto{font-style:italic;color:var(--verde);font-size:1.08rem}
+  .pagina-critica .rec .nota-trad{font-style:italic;color:var(--grigio);font-size:.92rem;margin-bottom:12px}
+  .pagina-critica .rec details{max-width:none;margin:10px 0 0;background:var(--crema)}
+  .pagina-critica .rec details p{padding:0 20px}
+  .pagina-critica .rec details p:last-child{padding-bottom:16px}
+  @media(max-width:600px){.pagina-critica .rec-testa{flex-direction:column}}
+  /* /critica-tv */
+</style>
+<link rel="icon" type="image/png" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="canonical" href="https://terraveganbynemo.com/la-critica/">
+</head>
+<body>
+
+<div class="langbar">
+  <div class="container">
+    <span class="attiva">IT</span>
+    <a href="/en/reviews/" style="color:#d9d4c7;text-decoration:none">EN</a>
+    <a href="/de/die-kritik/" style="color:#d9d4c7;text-decoration:none">DE</a>
+    <a href="/fr/la-critique/" style="color:#d9d4c7;text-decoration:none">FR</a>
+  </div>
+</div>
+
+<header>
+  <div class="container">
+    <h1>Terra Vegan by Nemo</h1>
+    <div class="sotto">Progetto editoriale dedicato all'autoproduzione vegetale</div>
+    <div class="numeri"><span>40 volumi</span>·<span>4 serie</span>·<span>14 lingue</span>·<span>Edizioni Terra Vegan</span></div>
+  </div>
+</header>
+
+<nav>
+  <div class="container">
+    <a href="/#manifesto">Il manifesto</a>
+    <a href="/#serie">Le serie</a>
+    <a href="/#catalogo">Catalogo</a>
+    <a href="/#critica">La critica</a>
+    <a href="/#autore">L'autore</a>
+    <a href="/#store">Dove trovarli</a>
+    <a href="/#contatti">Contatti</a>
+  </div>
+</nav>
+
+<section class="critica pagina-critica" id="critica">
+  <div class="container">
+    <h2>La critica sui manuali Terra Vegan</h2>
+    <div class="filo"></div>
+    <p class="critica-occhiello">I manuali non li giudichiamo solo noi. Il critico statunitense Anthony Avina sta recensendo uno per uno i volumi dell'edizione inglese di Terra Vegan by Nemo: qui ci sono i suoi giudizi, integrali.</p>
+    <div class="critica-serie">
+      <div class="nome">Serie Base</div>
+      <div class="riga"><span class="stelle">★★★★★</span> 9 volumi su 9 recensiti · tutti 5 stelle · Anthony Avina</div>
+    </div>
+    <div class="rec" id="vol1">
+      <div class="rec-testa">
+        <img src="/img/vol1.jpg" alt="Sapori Vegani d'Italia" loading="lazy">
+        <div>
+          <h3>Vol. 1 · Sapori Vegani d'Italia</h3>
+        <div class="tit-en">Vegan Flavours of Italy: Vegan Italian Cuisine</div>
+          <div class="meta">Recensione del 1 settembre 2026 · voto 10/10 · <span class="stelle">★★★★★</span> · Anthony Avina, USA<br><a href="https://authoranthonyavina.com/2026/09/01/vegan-flavours-of-italy-by-nemo-review/" target="_blank" rel="noopener">il post sul blog</a> · <a href="https://www.amazon.com/dp/B0HDCMMYLN" target="_blank" rel="noopener">la scheda Amazon</a> · <a href="https://www.goodreads.com/book/show/256550184" target="_blank" rel="noopener">la scheda Goodreads</a></div>
+        </div>
+      </div>
+      <p>Questo ricettario è affascinante e convincente. L'autore riesce benissimo a cogliere il cuore e la tradizione della cucina italiana, e insieme a raccontare la storia e la necessità della cucina vegana nel mondo di oggi, i diversi metodi di preparazione e il motivo per cui certi ingredienti si comportano così in ogni ricetta. La cura del dettaglio e la varietà delle ricette prendono vita splendidamente in questo libro.</p>
+      <p>Ma quello che colpisce davvero è il modo in cui l'autore ha costruito e ordinato ogni ricetta, raggruppandole in sezioni che seguono non soltanto un pasto preciso, ma il ritmo naturale di un pasto in qualunque casa o ristorante italiano. Dagli stuzzichini e dagli antipasti fino alle cene importanti, ogni ricetta aggiunge profondità e quel senso di cuore e di casa che molti associano alla cucina italiana. Una mia preferita apre il libro, la bruschetta mediterranea, e mostra come ingredienti semplici, forti e saporiti possano stare insieme senza alcun prodotto a base di carne.</p>
+      <p class="verdetto">Curato con attenzione, sentito e coinvolgente, «Vegan Flavors of Italy» di NEMO è un ricettario da leggere e un ottimo modo per aprire, questo mese, una serie di recensioni dedicata a questa collana di ricettari vegani incentrati sulla cucina italiana. La profondità dei dettagli e il modo in cui queste ricette sono state preparate valorizzano gli ingredienti tipici delle diverse regioni d'Italia e l'impegno vegano che il libro promette.</p>
+      <details><summary>Testo originale inglese</summary>
+      <p>This cookbook was fascinating and compelling. The author does a fantastic job capturing the heart and tradition of Italian cuisine while also exploring the history and need for vegan cooking in our modern world, as well as the various preparation methods and why certain ingredients interact in each recipe. The detail and variety of recipes came to life beautifully in this book.</p>
+      <p>But what really stood out was how the author developed and curated each recipe by grouping them into sections that fit not just a specific meal, but the natural flow of a meal in any Italian home or restaurant. From small nibbles and appetizers to big dinners or supper, each recipe added depth and a sense of heart and home that many associate with Italian cuisine. A personal favorite of mine opens the book with Mediterranean bruschetta, showing how simple, powerful, flavorful ingredients can come together without any meat-based products.</p>
+      <p class="verdetto">Thoughtfully curated, heartfelt, and engaging, author NEMO’s “Vegan Flavors of Italy” is a must-read cookbook and a great way to start off a fantastic series of reviews this month of this compelling series of vegan cookbooks centered around Italian cuisine. The depth of detail and the way these recipes were prepared complement the unique ingredients native to various regions in Italy and the commitment to veganism this cookbook promises.</p>
+      </details>
+    </div>
+    <div class="rec" id="vol2">
+      <div class="rec-testa">
+        <img src="/img/vol2.jpg" alt="L'essenza della Terra: Ricette Vegane al Tartufo" loading="lazy">
+        <div>
+          <h3>Vol. 2 · L'essenza della Terra: Ricette Vegane al Tartufo</h3>
+        <div class="tit-en">The Essence of the Earth: Vegan Truffle Cuisine</div>
+          <div class="meta">Recensione del 2 settembre 2026 · voto 10/10 · <span class="stelle">★★★★★</span> · Anthony Avina, USA<br><a href="https://authoranthonyavina.com/2026/09/02/the-essence-of-the-earth-vegan-truffle-recipes-by-nemo-review/" target="_blank" rel="noopener">il post sul blog</a> · <a href="https://www.amazon.com/dp/B0HF8C4HXN" target="_blank" rel="noopener">la scheda Amazon</a> · <a href="https://www.goodreads.com/book/show/256304113" target="_blank" rel="noopener">la scheda Goodreads</a></div>
+        </div>
+      </div>
+      <p>Uno sguardo bello e istruttivo sui molti modi di portare il tartufo nella cucina di ogni giorno. Queste ricette vegane sono ispirate, curate nei dettagli, e ognuna è perfettamente bilanciata dalla capacità dell'autore di mettere a fuoco non soltanto il modo in cui il tartufo si sposa con ogni piatto e i sensi che si risvegliano mangiandolo, ma anche l'abbinamento con la stagione giusta, per ottenere il meglio da ogni tartufo.</p>
+      <p>Un momento notevole del libro è il modo in cui l'autore offre alternative senza glutine per queste ricette. C'è chi non avverte il bisogno di cibo senza glutine, visto che negli ultimi anni è diventato anche una moda, ma per chi, come me, ha in famiglia una persona celiaca, è importante che il cibo senza glutine sia più facile da trovare, e l'attenzione dell'autore a questo dettaglio è una bella aggiunta. Una ricetta che sembra particolarmente buona è il burger di funghi e tartufo: vedere come vengono preparati questi hamburger vegetali e quanto sono cremosi i tartufi la rende ancora più invitante.</p>
+      <p class="verdetto">Istruttivo, coinvolgente e piacevole, «The Essence of the Earth» di NEMO è un ricettario di cucina italiana da leggere, che dà risalto al tartufo. Il gran numero di ricette e il modo in cui l'autore le divide, non solo per stagione e per tipo di tartufo usato, ma anche per genere di preparazione, dagli stuzzichini alle cene elaborate e squisite, ne fanno un libro da tenere a portata di mano e da consultare tante volte, per chi vuole preparare vera cucina italiana con buone ricette vegane.</p>
+      <details><summary>Testo originale inglese</summary>
+      <p>This was a fantastic, insightful look at the many ways to incorporate truffles into everyday cuisine. These vegan recipes are inspired, and the depth of detail, and each recipe is perfectly balanced with the author’s ability to hone in on not only the ways in which the truffles are compatible with each recipe and the specific senses that will be triggered when consuming these recipes, but also pairs them perfectly with each season to get the most out of each truffle.</p>
+      <p>A standout moment in the book is how the author provides gluten-free alternatives for these recipes. While some may not recognize the need for gluten-free food, as it has become more trendy in recent years, as someone with family who has celiac disease, it is important that gluten-free food be more readily available, and the author’s attention to this detail is a welcome addition. One recipe that looked especially delicious was the mushroom and truffle burger; seeing how these vegan patties were prepared and how creamy the truffles were made it sound even more appealing.</p>
+      <p class="verdetto">Insightful, engaging, and delightful, “The Essence of the Earth” BY NEMO is a must-read Italian cuisine cookbook that emphasizes truffles. The vast number of recipes, as well as the way the author divides these recipes- not only by season and the specific truffles used with the recipe, but also by the types of recipes that these encompass, from finger foods to complex yet divine dinners, make this a great book to reference to use time and time again for anyone hoping to prepare authentic Italian cuisine using delicious vegan recipes.</p>
+      </details>
+    </div>
+    <div class="rec" id="vol3">
+      <div class="rec-testa">
+        <img src="/img/vol3.jpg" alt="Non Salumi Veg" loading="lazy">
+        <div>
+          <h3>Vol. 3 · Non Salumi Veg</h3>
+        <div class="tit-en">Non-Cold Cuts Veg: Vegan Italian Cuisine</div>
+          <div class="meta">Recensione del 3 settembre 2026 · voto 10/10 · <span class="stelle">★★★★★</span> · Anthony Avina, USA<br><a href="https://authoranthonyavina.com/2026/09/03/non-cold-cuts-veg-by-nemo-review/" target="_blank" rel="noopener">il post sul blog</a> · <a href="https://www.amazon.com/dp/B0HDJML37F" target="_blank" rel="noopener">la scheda Amazon</a> · <a href="https://www.goodreads.com/book/show/256619196" target="_blank" rel="noopener">la scheda Goodreads</a></div>
+        </div>
+      </div>
+      <p>Un altro bellissimo ricettario vegano di questa collana dedicata alla cucina italiana. L'autore riesce a tenere insieme la preparazione di questi salumi vegetali e le ricette dei piatti in cui si possono usare. La cura dei dettagli e la scrittura dell'autore rendono facile tornare a questo libro tante volte.</p>
+      <p>Da lettore, la parte più bella è stata vedere il procedimento con cui si preparano queste carni vegetali e come ognuna diventi un salume riconoscibile. Dal modo in cui le piante vengono usate come addensante, all'impiego del fumo per dare più sapore di carne, fino alle spezie che aiutano a imitare i gusti dei salumi, l'autore mette in fila ricette molto diverse per tipi diversi di carni vegane, mortadella e salsicce italiane comprese.</p>
+      <p class="verdetto">Convincente, coinvolgente e istruttivo, «Non-Cold Cuts Veg» di Nemo è un ricettario di cucina italiana da leggere, per chi è vegano e per chi si interessa alla cucina vegana. La preparazione dei cibi e la cura dei dettagli danno spessore a questo libro particolare, che porta il sapore della carne dentro la cucina vegana e convince chi ha voglia di cucinare così.</p>
+      <details><summary>Testo originale inglese</summary>
+      <p>This was another fantastic vegan cookbook in this Italian vegan cuisine cookbook series. The author does a great job balancing the preparation of these vegan cold cuts with recipes for the various foods and meals they can be used in. The attention to detail and the author’s writing make it easy to return to this cookbook time and time again.</p>
+      <p>As a reader, my highlight was seeing the fascinating process of preparing these plant-based meats and how each one was transformed into an iconic cold cut. From the ways in which the plants were utilized for a thickening agent, to the use of smoke to add more meatiness, and the various spices that were used to help mimic the flavors of these cold cuts, the author was able to utilize a wide variety of different recipes for different types of vegan meats, including mortadella and Italian sausages.</p>
+      <p class="verdetto">Compelling, engaging, and insightful, Author Nemo’s “Non-Cold Cuts Veg” is a must-read Italian cuisine cookbook for vegans and those interested in vegan cuisine. The food preparation and attention to detail add depth to this unique cookbook on bringing meaty flavors to vegan cuisine, enticing readers interested in this style of cooking.</p>
+      </details>
+    </div>
+    <div class="rec" id="vol4">
+      <div class="rec-testa">
+        <img src="/img/vol4.jpg" alt="Non Sformaggi Veg" loading="lazy">
+        <div>
+          <h3>Vol. 4 · Non Sformaggi Veg</h3>
+        <div class="tit-en">Non-Cheese Veg: Homemade plant-based non-cheese</div>
+          <div class="meta">Recensione del 5 settembre 2026 · voto 10/10 · <span class="stelle">★★★★★</span> · Anthony Avina, USA<br><a href="https://authoranthonyavina.com/2026/09/05/non-cheese-veg-by-nemo-review/" target="_blank" rel="noopener">il post sul blog</a> · <a href="https://www.amazon.com/dp/B0HDK76YSQ" target="_blank" rel="noopener">la scheda Amazon</a></div>
+        </div>
+      </div>
+      <p>Un ricettario piacevole e divertente da affrontare. L'autore tiene bene insieme la preparazione e il procedimento dei formaggi vegetali e insieme esplora i tanti tipi che se ne possono fare. Vedere come nasce ogni cosa, dai formaggi spalmabili a quelli stagionati e a molto altro, e scoprire quanti formaggi diversi si possono fare è affascinante in queste ricette.</p>
+      <p>Quello che rende speciale questo libro è il modo in cui mostra come si fa il formaggio. Dai tipi di oli usati come base al processo di fermentazione e a come lo si ritrova persino in prodotti come il kombucha, fino alla stagionatura: un percorso particolare. L'autore entra molto nel dettaglio e mette i lettori in condizione di provare queste ricette da sé.</p>
+      <p class="verdetto">Convincente, coinvolgente e creativo, «Non-Cheese Veg» di Nemo è un libro da leggere sulla cucina italiana e sulla cucina vegana. È un ricettario preciso e piacevole, da consultare per molte ricette, e apre una finestra sull'intero procedimento con cui questi formaggi vegetali si fanno da zero.</p>
+      <details><summary>Testo originale inglese</summary>
+      <p>This was an engaging and fun cookbook to get into. The author does a great job balancing the preparation and process of making vegan cheese while also exploring the many types of vegan cheese. Being able to see how everything from spreadable cheeses to aged cheeses and so much more is created, and the multitude of different cheeses themselves, was fascinating to see in these recipes.</p>
+      <p>What made this book special was how it showed how cheese is made. From the types of oils used as the base for creating this cheese to the fermentation process and how that is even used for items such as kombucha, and the process of aging this cheese was a unique process. The author goes into great detail and lets readers use these recipes to test the items for themselves.</p>
+      <p class="verdetto">Compelling, engaging, and creative, Author Nemos “Non-Cheese Veg” is a must-read non-fiction book on Italian cuisine and vegan cooking. This cookbook is detailed and engaging, lets readers reference it for several recipes, and offers insight into the entire process of crafting these vegan cheeses from scratch.</p>
+      </details>
+    </div>
+    <div class="rec" id="vol5">
+      <div class="rec-testa">
+        <img src="/img/vol5.jpg" alt="Né Carne Né Pesce" loading="lazy">
+        <div>
+          <h3>Vol. 5 · Né Carne Né Pesce</h3>
+        <div class="tit-en">Neither Meat Nor Fish</div>
+          <div class="meta">Recensione del 6 settembre 2026 · voto 10/10 · <span class="stelle">★★★★★</span> · Anthony Avina, USA<br><a href="https://authoranthonyavina.com/2026/09/06/neither-meat-nor-fish-by-nemo-review/" target="_blank" rel="noopener">il post sul blog</a> · <a href="https://www.amazon.com/dp/B0H1JY65TB" target="_blank" rel="noopener">la scheda Amazon</a> · <a href="https://www.goodreads.com/book/show/252148392" target="_blank" rel="noopener">la scheda Goodreads</a></div>
+        </div>
+      </div>
+      <p>Un ricettario convincente e coinvolgente. L'autore tiene insieme benissimo ricette originali e la storia e il pensiero che stanno dietro alla sostituzione della carne. La cura dei dettagli e il modo sincero e sentito con cui affronta l'argomento arrivano al lettore.</p>
+      <p>Il cuore di questo libro è il modo in cui l'autore racconta la storia delle alternative alla carne. La cura dei dettagli è notevole, perché non guarda soltanto a quello che funziona oggi, ma anche ai tentativi falliti del passato e al motivo per cui le alternative di oggi funzionano come funzionano. Unire tutto questo a ricette davvero buone, come le lasagne vegane, le polpette vegane e gli hamburger, aiuta ad avvicinare chi ama i piatti di carne a chi è interessato a passare alla cucina vegana senza perdere il tocco italiano.</p>
+      <p class="verdetto">Meditato, coinvolgente e capace di ispirare, «Neither Meat Nor Fish» di Nemo è un libro da leggere. Per chi ha voglia di conoscere la storia e il pensiero del veganismo, si interessa di cucina italiana e vuole preparare versioni buone dei propri piatti preferiti senza carne, questo libro arriva davvero.</p>
+      <details><summary>Testo originale inglese</summary>
+      <p>This cookbook was compelling and engaging. The author does a fantastic job balancing unique recipes with the history and philosophy behind replacing meat with non-meat substitutes. The attention to detail and the honest, heartfelt way the author explores the subject matter will resonate with readers.</p>
+      <p>The heart of this book was how the author explored the history of non-meat options. The attention to detail is great, as the author considers not only what works now, but also the history behind failed attempts and why today’s non-meat options work the way they do. Pairing that with truly delicious recipes such as vegan lasagna, vegan meatballs, and hamburgers will help bridge the gap between those who really enjoy meat-based food and those interested in switching to vegan cooking while still keeping that Italian flair.</p>
+      <p class="verdetto">Thoughtful, engaging, and inspiring, Author Nemo’s “Neither Meat Nor Fish” is a must-read non-fiction cookbook. For those who enjoy learning about the history and philosophy of veganism, share an interest in Italian cuisine, and want to make delicious non-meat versions of their favorite recipes, this book will really resonate.</p>
+      </details>
+    </div>
+    <div class="rec" id="vol6">
+      <div class="rec-testa">
+        <img src="/img/vol6.jpg" alt="Salse, Sughi e Condimenti" loading="lazy">
+        <div>
+          <h3>Vol. 6 · Salse, Sughi e Condimenti</h3>
+        <div class="tit-en">Vegan Sauces, Gravies and Condiments: The flavour that completes every dish</div>
+          <div class="meta">Recensione del 8 settembre 2026 · voto 10/10 · <span class="stelle">★★★★★</span> · Anthony Avina, USA<br><a href="https://authoranthonyavina.com/2026/09/08/vegan-sauces-gravies-and-condiments-by-nemo-review/" target="_blank" rel="noopener">il post sul blog</a> · <a href="https://www.amazon.com/dp/B0HDJW9H5P" target="_blank" rel="noopener">la scheda Amazon</a></div>
+        </div>
+      </div>
+      <p>Un altro ricettario bellissimo di questa collana. L'autore tiene insieme le tecniche e i metodi per fare queste salse da zero e ricette forti e invitanti, che chi si avvicina al veganismo apprezzerà moltissimo. Soprattutto, la capacità dell'autore di mostrare come tutti i sapori vengano naturalmente dalla terra, e il procedimento che trasforma gli ingredienti nell'emulsione, offrono al lettore uno sguardo dietro le quinte su quello che serve per dare vita a queste ricette.</p>
+      <p>Ho apprezzato anche il modo in cui l'autore fa vivere queste tecniche e mostra come il rispetto degli ingredienti porti sapore nelle ricette, con salse notevoli che mi hanno fatto venire voglia di provarle. In particolare, un pesto originale con pomodori secchi e mandorle sembra davvero ottimo. Sono ricette che coinvolgono e a cui si torna volentieri, tante volte.</p>
+      <p class="verdetto">Convincente, informativo e coinvolgente, «Vegan Sauces, Gravies and Condiments» di NEMO è un ricettario da leggere per chiunque si interessi di cucina vegana e di cucina italiana. Il modo in cui l'autore intreccia questa esplorazione di ingredienti che nascono in natura, e in Italia in particolare, con il loro impiego in salse e intingoli di ogni genere ne fa un libro bellissimo per chi vuole avvicinarsi a questa cucina.</p>
+      <details><summary>Testo originale inglese</summary>
+      <p>This was yet another fantastic cookbook in this cookbook series. The author does a fantastic job balancing the techniques and methods for making these sauces from scratch with powerful, delicious-sounding recipes that anyone hoping to get into veganism will thoroughly enjoy. In particular, the author’s ability to hone in on how all flavors come naturally from the Earth, and on the transformative process of emulsification, gave readers a behind-the-scenes glimpse into what it takes to bring these recipes to life.</p>
+      <p>I also appreciated that the author brought these techniques to life and showed how respecting these ingredients brings flavor to the recipes, featuring fantastic sauces that left me eager to try them. In particular, a unique pesto made with sun-dried tomatoes and almonds sounded especially delicious. These recipes engage the reader and offer great references to return to time and time again.</p>
+      <p class="verdetto">Compelling, informative, and engaging, Author NEMO’s “Vegan Sauces, Gravies and Condiments” is a must-read cookbook for anyone interested in vegan cooking and Italian cuisine. The way the author is able to tie this unique exploration of ingredients that are natural in the world, but especially in Italy, and utilize them for delicious sauces and dips of any kind makes this a fantastic book for readers looking to get into this kind of cooking.</p>
+      </details>
+    </div>
+    <div class="rec" id="vol7">
+      <div class="rec-testa">
+        <img src="/img/vol7.jpg" alt="Pane Pizza e Basi Salate" loading="lazy">
+        <div>
+          <h3>Vol. 7 · Pane Pizza e Basi Salate</h3>
+        <div class="tit-en">Bread, Pizza and Savoury Bases</div>
+          <div class="meta">Recensione del 19 settembre 2026 · voto 10/10 · <span class="stelle">★★★★★</span> · Anthony Avina, USA<br><a href="https://authoranthonyavina.com/2026/09/19/bread-pizza-and-savoury-bases-by-nemo-review/" target="_blank" rel="noopener">il post sul blog</a> · <a href="https://www.amazon.com/dp/B0HDL59NJ3" target="_blank" rel="noopener">la scheda Amazon</a></div>
+        </div>
+      </div>
+      <p>Un altro ricettario convincente di questa collana vegana. L'autore mette in contatto chi non ha mai cucinato piatti vegani con l'arte e il legame profondo che tante persone hanno con la panificazione, ed è sorprendente. Riesce anche a spiegare benissimo perché fare il pane sia tanto amato: non è solo un ricordo, è sopravvivenza e speranza lungo tutta la storia umana, e permette di legarsi alla natura attraverso gli ingredienti e il gesto stesso di impastare, che lungo la storia è stato spesso la linea che divide la fame dal sopravvivere.</p>
+      <p>Questo legame sentito con il pane si tiene in perfetto equilibrio con le tante ricette che il libro contiene. L'autore descrive con chiarezza ricette e ingredienti vegani per ogni preparazione, compresa la focaccia, che è uno dei pani italiani preferiti di chi scrive.</p>
+      <p class="verdetto">Un bel punto di riferimento per fare pani di tradizione italiana di alta qualità con ingredienti vegani di alta qualità, «Bread, Pizza and Savory Bases» di Nemo è un ricettario vegano da leggere. Raccoglie molte ricette notevoli, usa diversi ingredienti vegani e insieme racconta una storia ricca della panificazione, che va oltre la cucina italiana vegana e parla al cuore della capacità di tante culture di imparare e di cucinare bene.</p>
+      <details><summary>Testo originale inglese</summary>
+      <p>This was yet another compelling cookbook in this vegan cookbook series. The author connects readers who may never have cooked vegan food before with the artistry and heartfelt connection many people have with baking bread; it is astonishing. The author also does a fantastic job of honing in on why baking bread is so revered by so many people, as it’s not only a point of nostalgia but a point of survival and hope throughout human history, allowing people to connect with nature on Earth through the ingredients and the physical act of kneading dough, which throughout history has often been the line between going hungry and surviving.</p>
+      <p>This heartfelt connection to baking bread is perfectly balanced with the many recipes readers can find in this book. The author clearly describes and uses vegan recipes and ingredients for each recipe in the book, including focaccia bread, a personal favorite Italian bread of this reader.</p>
+      <p class="verdetto">A great reference for making high-quality Italian-based breads with high-quality vegan ingredients, Author Nemo’s “Bread, Pizza and Savory Bases” is a must-read vegan cookbook. It features many fantastic recipes and uses several vegan ingredients, plus a rich history of making bread that surpasses vegan Italian cuisine and speaks to the heart of many cultures’ ability to learn and cook great food.</p>
+      </details>
+    </div>
+    <div class="rec" id="vol8">
+      <div class="rec-testa">
+        <img src="/img/vol8.jpg" alt="Dolci e Grandi Lievitati Vegani" loading="lazy">
+        <div>
+          <h3>Vol. 8 · Dolci e Grandi Lievitati Vegani</h3>
+        <div class="tit-en">Vegan Desserts and Large Leavened Products</div>
+          <div class="meta">Recensione del 19 settembre 2026 · voto 10/10 · <span class="stelle">★★★★★</span> · Anthony Avina, USA<br><a href="https://authoranthonyavina.com/2026/09/19/vegan-desserts-and-large-leavened-products-by-nemo-review/" target="_blank" rel="noopener">il post sul blog</a> · <a href="https://www.amazon.com/dp/B0HF4NXBHC" target="_blank" rel="noopener">la scheda Amazon</a></div>
+        </div>
+      </div>
+      <p>Un ricettario italiano vegano più rapido, e insieme più ricco. L'attenzione ai dolci è una bella pausa dopo le ottime ricette salate che la collana ha offerto finora. L'autore mette bene in luce gli ingredienti che sostituiscono uova, latte e derivati e altri ingredienti ancora, e punta su alternative vegane solide che mantengono i sapori forti che da queste ricette ci si aspetta.</p>
+      <p>L'autore dà vita a queste ricette con misura e maestria. Il libro è diviso in quattro parti uguali, dai pani e dalle torte ai biscotti e ad altri dolci da forno, con in più basi solide per altri dessert. Una delle mie preferite, che non conoscevo, è la focaccia dolce, che unisce uno dei miei pani italiani preferiti a un tocco dolce davvero invitante.</p>
+      <p class="verdetto">Un libro di riferimento rapido e ben fatto per chi vuole preparare dolci italiani vegani, «Vegan Desserts and Large Leavened Products» di Nemo è un ricettario di dolci della cucina italiana da leggere per chi ama la cucina vegana. Le ricette ricche e golose di questo libro parleranno a chi ama i dolci e faranno tornare i lettori a cercarne di nuove.</p>
+      <details><summary>Testo originale inglese</summary>
+      <p>This was a much quicker, yet richer, Italian vegan cookbook. The focus on sweet and delicious desserts was a great break from the amazing savory recipes this series has offered so far. The author does a great job highlighting ingredients that forgo eggs, dairy, and other ingredients, instead focusing on strong vegan replacements that keep the powerful flavors people expect from these amazing recipes.</p>
+      <p>The author brings these recipes to life succinctly and expertly. The book is divided into four equal sections, from breads and cakes to biscuits and other pastries, plus solid bases for other desserts. One personal favorite I had never heard of before was sweet focaccia bread, combining one of my favorite Italian breads with a dessert twist that sounds absolutely delicious.</p>
+      <p class="verdetto">A fast-paced, great reference book for those looking to make delicious vegan Italian desserts, Author Nemo’s “Vegan Desserts and Large Leavened Products” is a must-read Italian cuisine dessert cookbook for those who love vegan cooking. The rich, delicious recipes in this cookbook will resonate with dessert lovers and keep readers coming back to discover new and exciting vegan recipes.</p>
+      </details>
+    </div>
+    <div class="rec" id="vol9">
+      <div class="rec-testa">
+        <img src="/img/vol9.jpg" alt="Bevande e Cibi Fermentati" loading="lazy">
+        <div>
+          <h3>Vol. 9 · Bevande e Cibi Fermentati</h3>
+        <div class="tit-en">Fermented Foods and Beverages</div>
+          <div class="meta">Recensione del 19 settembre 2026 · voto 10/10 · <span class="stelle">★★★★★</span> · Anthony Avina, USA<br><a href="https://authoranthonyavina.com/2026/09/19/fermented-foods-and-beverages-by-nemo-review/" target="_blank" rel="noopener">il post sul blog</a> · <a href="https://www.amazon.com/dp/B0HF4NV1WV" target="_blank" rel="noopener">la scheda Amazon</a></div>
+        </div>
+      </div>
+      <p>Un altro sguardo rapido e sintetico sulla cucina vegana, per chi vuole capire e cominciare a fermentare le proprie bevande e le proprie salse. Le ricette di questo libro sono particolari non solo perché sono buone, ma anche per l'impianto scientifico, dato che l'autore spiega con chiarezza il processo di fermentazione. Dalla scelta dei contenitori giusti alla comprensione delle temperature adatte e ad altro ancora, il libro offre un'analisi dettagliata della fermentazione, così che i lettori capiscano come funzionano queste ricette.</p>
+      <p>Una volta compresa la scienza dietro la fermentazione e il procedimento di ogni ricetta, i lettori possono preparare bevande notevoli e salse molto buone, da gustare da sole o da usare in altre ricette vegane. Una delle mie preferite, in questo libro, è una delle ultime ricette: la pasta di peperoncino fermentata, che aggiunge piccantezza e calore ad altre preparazioni per dare più sapore.</p>
+      <p class="verdetto">Una raccolta di bevande e salse vegane fermentate, buone e costruite sulla scienza: «Fermented Foods and Beverages» di Nemo è un ricettario vegano della cucina italiana da leggere. Il dettaglio e la conoscenza che l'autore trasmette sulla fermentazione, insieme a ricette buone che mostrano il procedimento, faranno tornare i lettori a consultare questo libro molte volte.</p>
+      <details><summary>Testo originale inglese</summary>
+      <p>This is another fast-paced, concise look at vegan cooking for those who want to understand and start fermenting their own drinks and sauces. The recipes in this book are unique not only for their deliciousness, but also for their scientific approach, as the author clearly explains the fermentation process. From choosing the right containers for fermenting these recipes to understanding the right temperatures for the process and more, the book provides detailed analysis of fermentation so readers can understand how these recipes work.</p>
+      <p>After understanding the science behind fermentation and the process for each recipe, readers can make amazing drinks and fantastic sauces for individual enjoyment and for use in other vegan recipes. A personal favorite in this book was one of the last recipes: fermented chili paste, which adds spice and heat to other recipes for extra flavor.</p>
+      <p class="verdetto">A science-driven, delicious collection of fermented vegan drinks and sauces, Author Nemo’s “Fermented Foods and Beverages” is a must-read Italian-cuisine vegan cookbook. The detail and knowledge the author imparts about fermentation, along with delicious recipes that showcase the process, will keep readers returning to reference this book time and time again.</p>
+      </details>
+    </div>
+    <div class="critica-apri"><a href="/">Torna alla home</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 Edizioni Terra Vegan · Tutti i diritti riservati · <a href="/privacy/" style="color:inherit;text-decoration:underline">Privacy</a></div>
+</footer>
+
+<script src="/js/track.js"></script>
+</body>
+</html>
