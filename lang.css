@@ -11,6 +11,10 @@ header h1{font-size:2.8rem;font-weight:normal}
 header .sotto{font-style:italic;font-size:1.15rem;margin-top:10px;color:#e8e3d5}
 header .numeri{margin-top:26px;font-family:Helvetica,Arial,sans-serif;font-size:.95rem;letter-spacing:.12em;text-transform:uppercase;color:#cfe0c8}
 header .numeri span{margin:0 12px}
+nav{background:var(--carta);border-bottom:1px solid #e3ddd0;position:sticky;top:0;z-index:10}
+nav .container{display:flex;justify-content:center;gap:34px;padding:14px 24px;flex-wrap:wrap}
+nav a{color:var(--verde-scuro);text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase}
+nav a:hover{color:var(--terra)}
 section{padding:60px 0}
 h2{font-size:1.9rem;font-weight:normal;color:var(--verde-scuro);text-align:center;margin-bottom:8px}
 .filo{width:56px;height:2px;background:var(--terra);margin:14px auto 36px}
