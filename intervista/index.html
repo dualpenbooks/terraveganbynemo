@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'intervista · Terra Vegan by Nemo</title>
+<meta name="description" content="L'intervista di Anthony Avina a Nemo T. V., l'autore della collana Terra Vegan, tradotta in italiano.">
+<style>
+  :root{
+    --verde:#3d5a3a;
+    --verde-scuro:#2c4229;
+    --crema:#faf6ee;
+    --carta:#ffffff;
+    --terra:#b8860b;
+    --arancio:#c05f10;
+    --testo:#2e2a24;
+    --grigio:#6b665e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:Georgia,'Times New Roman',serif;color:var(--testo);background:var(--crema);line-height:1.65}
+  .sans{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+  .container{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* Barra lingue */
+  .langbar{background:var(--verde-scuro);color:#d9d4c7;font-size:.8rem;padding:6px 0;font-family:Helvetica,Arial,sans-serif}
+  .langbar .container{display:flex;justify-content:flex-end;gap:14px}
+  .langbar .attiva{color:#fff;font-weight:bold;border-bottom:1px solid #fff}
+  .langbar .presto{opacity:.45;cursor:default}
+
+  /* Header */
+  header{background:var(--verde);color:#fff;padding:64px 0 56px;text-align:center}
+  header h1{font-size:2.8rem;font-weight:normal;letter-spacing:.03em}
+  header .sotto{font-style:italic;font-size:1.15rem;margin-top:10px;color:#e8e3d5}
+  header .numeri{margin-top:26px;font-family:Helvetica,Arial,sans-serif;font-size:.95rem;letter-spacing:.12em;text-transform:uppercase;color:#cfe0c8}
+  header .numeri span{margin:0 12px}
+
+  /* Nav */
+  nav{background:var(--carta);border-bottom:1px solid #e3ddd0;position:sticky;top:0;z-index:10}
+  nav .container{display:flex;justify-content:center;gap:34px;padding:14px 24px;flex-wrap:wrap}
+  nav a{color:var(--verde-scuro);text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase}
+  nav a:hover{color:var(--terra)}
+
+  section{padding:60px 0}
+  h2{font-size:1.9rem;font-weight:normal;color:var(--verde-scuro);text-align:center;margin-bottom:8px}
+  .filo{width:56px;height:2px;background:var(--terra);margin:14px auto 36px}
+
+  /* Manifesto */
+  .manifesto{background:var(--crema)}
+  .manifesto .testo{max-width:720px;margin:0 auto;font-size:1.12rem}
+  .manifesto p{margin-bottom:18px}
+  .manifesto .incipit{font-size:1.35rem;font-style:italic;text-align:center;color:var(--verde);margin-bottom:28px}
+  .manifesto .firma{text-align:right;font-style:italic;color:var(--grigio);margin-top:26px}
+
+  /* Serie */
+  .serie{background:var(--carta)}
+  .griglia-serie{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-bottom:48px}
+  .card{border:1px solid #e3ddd0;border-radius:6px;padding:26px 22px;background:var(--crema)}
+  .card h3{color:var(--verde-scuro);font-size:1.2rem;font-weight:normal;margin-bottom:4px}
+  .card .vol{font-family:Helvetica,Arial,sans-serif;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--terra);margin-bottom:12px}
+  .card p{font-size:.95rem;margin-bottom:14px}
+  .stato{font-family:Helvetica,Arial,sans-serif;font-size:.8rem;font-weight:bold}
+  .stato.ok{color:var(--verde)}
+  .stato.presto{color:var(--arancio)}
+
+  /* Copertine base */
+  .griglia-cover{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:20px;max-width:920px;margin:0 auto}
+  .griglia-cover figure{text-align:center}
+  .griglia-cover img{width:100%;border-radius:3px;box-shadow:0 3px 12px rgba(0,0,0,.18)}
+  .griglia-cover figcaption{font-size:.8rem;color:var(--grigio);margin-top:8px;font-family:Helvetica,Arial,sans-serif}
+
+  /* Catalogo completo */
+  .catalogo{background:var(--crema)}
+  details{max-width:760px;margin:0 auto 14px;background:var(--carta);border:1px solid #e3ddd0;border-radius:6px}
+  summary{cursor:pointer;padding:16px 20px;color:var(--verde-scuro);font-size:1.05rem;list-style-position:inside}
+  summary .vol{font-family:Helvetica,Arial,sans-serif;font-size:.78rem;color:var(--terra);letter-spacing:.06em;text-transform:uppercase;margin-left:8px}
+  summary.con-banner{list-style:none}
+  summary.con-banner::-webkit-details-marker{display:none}
+  summary.con-banner .freccia::before{content:"\25B8  "}
+  details[open] summary.con-banner .freccia::before{content:"\25BE  "}
+  summary.con-banner img{display:block;width:100%;height:auto;border-radius:6px;margin:0 0 12px}
+  details ol{padding:4px 24px 20px 48px}
+  details li{margin-bottom:6px;font-size:.98rem}
+  details li span{color:var(--grigio);font-size:.85rem}
+  details .griglia-cover{padding:8px 20px 24px;max-width:none}
+
+  /* Autore */
+  .autore{background:var(--verde);color:#f2efe6}
+  .autore h2{color:#fff}
+  .autore .filo{background:#d9c48a}
+  .autore .testo{max-width:720px;margin:0 auto;text-align:center}
+  .autore .nome{font-size:1.5rem;font-style:italic;margin-bottom:18px}
+  .autore p{margin-bottom:14px}
+  .autore .cred{font-size:.95rem;color:#d9d4c7}
+
+  /* Store */
+  .store .lista{max-width:640px;margin:0 auto}
+  .store .voce{display:flex;align-items:baseline;gap:14px;padding:16px 4px;border-bottom:1px solid #e3ddd0}
+  .store .voce b{min-width:130px;font-family:Helvetica,Arial,sans-serif;font-size:.9rem;letter-spacing:.04em;color:var(--verde-scuro)}
+  .store a{color:var(--terra)}
+  .store .nota{max-width:640px;margin:26px auto 0;text-align:center;font-style:italic;color:var(--grigio);font-size:.95rem}
+
+  /* Contatti */
+  .contatti{background:var(--carta);text-align:center}
+  .contatti p{margin-bottom:10px;font-size:1.05rem}
+  .contatti a{color:var(--terra)}
+
+  footer{background:var(--verde-scuro);color:#b9b3a4;text-align:center;padding:26px 0;font-size:.85rem;font-family:Helvetica,Arial,sans-serif}
+
+  @media(max-width:600px){
+    header h1{font-size:2rem}
+    header .numeri span{display:block;margin:4px 0}
+  }
+
+
+
+  /* critica-tv */
+  .critica{background:var(--carta)}
+  .critica-occhiello{max-width:760px;margin:0 auto 28px;text-align:center;font-size:1.05rem}
+  .critica-serie{max-width:760px;margin:0 auto 30px;padding:18px 22px;border:1px solid #e3ddd0;border-radius:6px;background:var(--crema);text-align:center}
+  .critica-griglia + .critica-serie{margin-top:64px}
+  .critica-serie .nome{font-size:1.2rem;color:var(--verde-scuro)}
+  .critica-serie .riga{margin-top:6px;font-family:Helvetica,Arial,sans-serif;font-size:.85rem;color:var(--grigio)}
+  .stelle{color:var(--terra);letter-spacing:.11em;font-size:.9rem}
+  .critica-griglia{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:20px;max-width:920px;margin:0 auto}
+  .tessera{display:block;text-decoration:none;background:var(--crema);border:1px solid #e3ddd0;border-radius:6px;padding:12px;transition:border-color .15s,transform .15s}
+  .tessera:hover{border-color:var(--terra);transform:translateY(-3px)}
+  .tessera img{width:100%;height:auto;display:block;border-radius:3px;box-shadow:0 3px 12px rgba(0,0,0,.18)}
+  .tessera .tit{margin-top:10px;font-size:.95rem;color:var(--verde-scuro);line-height:1.25}
+  .tessera .riga{margin-top:5px;font-family:Helvetica,Arial,sans-serif;font-size:.76rem;color:var(--grigio)}
+  .critica-apri{margin-top:30px;text-align:center;font-family:Helvetica,Arial,sans-serif;font-size:.85rem;letter-spacing:.07em;text-transform:uppercase}
+  .critica-apri a{color:var(--terra)}
+  .pagina-critica .rec{max-width:760px;margin:0 auto 52px;padding-top:8px}
+  .pagina-critica .rec-testa{display:flex;gap:22px;align-items:flex-start;margin-bottom:16px}
+  .pagina-critica .rec-testa img{width:120px;flex:none;border-radius:3px;box-shadow:0 3px 12px rgba(0,0,0,.18)}
+  .pagina-critica .rec h3{font-size:1.35rem;font-weight:normal;color:var(--verde-scuro);margin-bottom:2px}
+  .pagina-critica .rec .tit-en{font-style:italic;color:var(--grigio);font-size:.95rem;margin-bottom:8px}
+  .pagina-critica .rec .meta{font-family:Helvetica,Arial,sans-serif;font-size:.82rem;color:var(--grigio);line-height:1.7}
+  .pagina-critica .rec .meta a{color:var(--terra)}
+  .pagina-critica .rec p{margin-bottom:14px;font-size:1.02rem}
+  .pagina-critica .rec p.verdetto{font-style:italic;color:var(--verde);font-size:1.08rem}
+  .pagina-critica .rec .nota-trad{font-style:italic;color:var(--grigio);font-size:.92rem;margin-bottom:12px}
+  .pagina-critica .rec details{max-width:none;margin:10px 0 0;background:var(--crema)}
+  .pagina-critica .rec details p{padding:0 20px}
+  .pagina-critica .rec details p:last-child{padding-bottom:16px}
+  @media(max-width:600px){.pagina-critica .rec-testa{flex-direction:column}}
+  /* /critica-tv */
+</style>
+<link rel="icon" type="image/png" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="canonical" href="https://terraveganbynemo.com/intervista/">
+</head>
+<body>
+
+<div class="langbar">
+  <div class="container">
+    <span class="attiva">IT</span>
+    <a href="/en/interview/" style="color:#d9d4c7;text-decoration:none">EN</a>
+    <a href="/de/interview/" style="color:#d9d4c7;text-decoration:none">DE</a>
+    <a href="/fr/entretien/" style="color:#d9d4c7;text-decoration:none">FR</a>
+  </div>
+</div>
+
+<header>
+  <div class="container">
+    <h1>Terra Vegan by Nemo</h1>
+    <div class="sotto">Progetto editoriale dedicato all'autoproduzione vegetale</div>
+    <div class="numeri"><span>40 volumi</span>·<span>4 serie</span>·<span>14 lingue</span>·<span>Edizioni Terra Vegan</span></div>
+  </div>
+</header>
+
+<nav>
+  <div class="container">
+    <a href="/#manifesto">Il manifesto</a>
+    <a href="/#serie">Le serie</a>
+    <a href="/#catalogo">Catalogo</a>
+    <a href="/#critica">La critica</a>
+    <a href="/#intervista">L'intervista</a>
+    <a href="/#autore">L'autore</a>
+    <a href="/#store">Dove trovarli</a>
+    <a href="/#contatti">Contatti</a>
+  </div>
+</nav>
+
+<section class="intervista pagina-intervista" id="intervista" style="background:var(--crema);text-align:center">
+  <div class="container">
+    <h2>L'intervista</h2>
+    <div class="filo"></div>
+    <p style="max-width:640px;margin:0 auto 8px;color:var(--grigio);font-style:italic">Anthony Avina intervista Nemo T. V. · 19 ottobre 2026</p>
+    <p style="max-width:640px;margin:0 auto 34px;color:var(--grigio)">Il 19 ottobre 2026 il critico statunitense Anthony Avina ha intervistato Nemo T. V., l'autore della collana Terra Vegan. Qui l'intervista completa, tradotta dall'inglese.</p>
+    <div style="max-width:760px;margin:0 auto;text-align:left">
+      <div class="qa">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;color:var(--verde)">Ci parli un po' di lei. Come è arrivato alla scrittura?</h3>
+        <p style="margin:0 0 26px">Mi sono formato come perito agrario e ho studiato Scienze Politiche a Firenze, e per anni ho lavorato nell'agricoltura biologica. Alla scrittura sono arrivato dalla pratica: provavo ricette vegetali e prendevo appunti su tempi, temperature e quantità, e mi sono accorto che quegli appunti servivano più agli altri che a me. Scrivere manuali è stato il modo di mettere in ordine quello che facevo già in laboratorio.</p>
+      </div>
+      <div class="qa">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;color:var(--verde)">Che cosa l'ha spinto a scrivere i suoi libri?</h3>
+        <p style="margin:0 0 26px">Prima di tutto il rispetto per gli altri esseri viventi e per il pianeta: è per questo che cucino così. E poi il fatto che, tolto l'ingrediente animale, la maggior parte dei libri si ferma al sostituto comprato al supermercato. Volevo mostrare come lo si fa in casa: koji, formaggi vegetali, salumi, fermentati, pane. Quaranta volumi, dalle basi fino alla produzione a norma di legge, perché ogni passaggio abbia il suo posto.</p>
+      </div>
+      <div class="qa">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;color:var(--verde)">Quale tema o messaggio spera che i lettori portino con sé dai suoi libri?</h3>
+        <p style="margin:0 0 26px">Che si può mangiare bene senza far pagare il conto a un altro essere vivente, e senza pesare sul pianeta più del necessario. Per me è una cosa ovvia, oggi è anche di moda, ma il punto resta lo stesso: il rispetto per la vita, e il cibo fatto con le proprie mani. L'autoproduzione restituisce autonomia, cioè sapere che cosa c'è dentro quello che si mangia e saperlo rifare. E la cucina italiana resta italiana anche senza ingredienti animali.</p>
+      </div>
+      <div class="qa">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;color:var(--verde)">Che cosa l'ha attirato verso questo genere in particolare?</h3>
+        <p style="margin:0 0 26px">Un manuale è onesto: o la ricetta funziona o non funziona. Scrivo tempi, temperature, percentuali e i motivi per cui una cosa riesce, perché chi legge possa ripeterla nella sua cucina e ottenere lo stesso risultato. La mia formazione di Lead Auditor ISO 22000 e ISO 9001 e di ex responsabile del piano di autocontrollo HACCP mi ha insegnato a scrivere procedure che qualcun altro deve poter seguire.</p>
+      </div>
+      <div class="qa">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;color:var(--verde)">Quale social le è stato più utile per farsi conoscere dai lettori?</h3>
+        <p style="margin:0 0 26px">Nessuno, a dire il vero. Siamo una piccola casa editrice: contano il nostro sito, terraveganbynemo.com, il passaparola e recensioni oneste come la sua.</p>
+      </div>
+      <div class="qa">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;color:var(--verde)">Che consiglio darebbe a chi vuole scrivere o ha appena cominciato?</h3>
+        <p style="margin:0 0 26px">Provate quello che scrivete, poi provatelo di nuovo. In un manuale un numero sbagliato non è un'imprecisione: è una ricetta che non riesce nella cucina di qualcun altro. E scrivete un volume alla volta, come se fosse l'unico.</p>
+      </div>
+      <div class="qa">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;color:var(--verde)">Che cosa le riserva il futuro? Nuovi libri o progetti all'orizzonte?</h3>
+        <p style="margin:0 0 26px">La collana è completa: quaranta volumi in quattro serie, tutti pubblicati. La Serie Base esiste in quattordici lingue, le altre in italiano, inglese, tedesco e francese. Il lavoro adesso è farla arrivare a chi produce davvero, dalle cucine di casa ai laboratori.</p>
+      </div>
+      <div class="qa">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;color:var(--verde)">L'autore</h3>
+        <p style="margin:0 0 26px">Nemo T. V. è lo pseudonimo di un autore italiano che firma la collana Terra Vegan. Perito agrario, laureato in Scienze Politiche a Firenze, è Lead Auditor ISO 22000:2018 e ISO 9001:2015 ed è stato responsabile del piano di autocontrollo HACCP, con esperienza nell'agricoltura biologica. Si occupa di autoproduzione vegetale, fermentazione e trasformazione artigianale, senza ingredienti industriali. Sito: terraveganbynemo.com</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:10px"><a href="https://authoranthonyavina.com/2026/10/19/interview-with-nemo-t-v-author-of-the-terra-vegan-collection/" target="_blank" rel="noopener" style="color:var(--verde);font-weight:bold">L'originale sul blog di Anthony Avina (in inglese)</a></div>
+    <div style="text-align:center;margin-top:18px"><a href="/" style="color:var(--verde)">Torna alla home</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 Edizioni Terra Vegan · Tutti i diritti riservati · <a href="/privacy/" style="color:inherit;text-decoration:underline">Privacy</a></div>
+</footer>
+
+<script src="/js/track.js"></script>
+</body>
+</html>
