@@ -93,3 +93,16 @@ footer{background:var(--verde-scuro);color:#b9b3a4;text-align:center;padding:26p
   .pagina-critica .rec details p:last-child{padding-bottom:16px}
   @media(max-width:600px){.pagina-critica .rec-testa{flex-direction:column}}
   /* /critica-tv */
+  /* articolo-tv */
+  .pagina-critica .rec h4{font-size:1.15rem;font-weight:normal;color:var(--verde-scuro);margin:26px 0 10px}
+  .pagina-critica .rec h5{font-size:1.02rem;font-weight:bold;color:var(--verde-scuro);margin:18px 0 8px}
+  .pagina-critica .rec ul{margin:0 0 14px 22px}
+  .pagina-critica .rec ul li{margin-bottom:6px;font-size:1.02rem}
+  .pagina-critica .rec .tab-art{overflow-x:auto;margin:0 0 18px}
+  .pagina-critica .rec table{width:100%;border-collapse:collapse;font-size:.95rem}
+  .pagina-critica .rec th,.pagina-critica .rec td{border:1px solid #e3ddd0;padding:8px 10px;text-align:left;vertical-align:top}
+  .pagina-critica .rec th{background:var(--crema);color:var(--verde-scuro)}
+  .pagina-critica .rec details h4,.pagina-critica .rec details h5,.pagina-critica .rec details .tab-art{padding:0 20px}
+  .pagina-critica .rec details ul{margin-left:42px}
+  .critica-rimando a{color:var(--terra)}
+  /* /articolo-tv */
